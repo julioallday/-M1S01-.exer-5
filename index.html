@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curriculum Vitae</title>
+        <style>
+            :root {
+                --amarelo-vidro: #79aba254;
+                --amarelo-primario: #b4b943;
+                --amarelo-secundario: #b7833a;
+                --amarelo-hover: #eefa1a;
+                --contorno-letras: white;
+            }
+
+            body {
+                max-width: 100vw;
+                background-color: #301e1a;
+                color: rgb(200, 190, 190);
+                margin: 0;
+                font-size: 26px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                    'Helvetica Neue', sans-serif;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 80px;
+                background-color: var(--amarelo-vidro);
+                border: 1px solid var(--amarelo-primario);
+                border-style: solid;
+                border-width: 0 0 1px 0;
+            }
+
+            h1 {
+                font-size: 40px;
+                margin: 10px;
+                color: #d1d940;
+                width: fit-content;
+                height: fit-content;
+                justify-self: flex-start;
+                align-self: center;
+                transition-duration: 2s;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--contorno-letras);
+
+            }
+
+            h1:hover {
+                color: var(--amarelo-hover);
+                transition-duration: 2s;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+            }
+
+            h2 {
+                color: var(--amarelo-primario);
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--contorno-letras);
+            }
+
+            section {
+                margin: 100px 150px 100px 111px;
+                padding: 10px;
+                background-color: #79aba254;
+                border-radius: 10px;
+                border: 1px solid var(--amarelo-primario);
+                transition-duration: 2s;
+
+            }
+
+            section:hover {
+                box-shadow: -2px 19px 98px 2px var(--amarelo-hover);
+                transition-duration: 2s;
+
+            }
+
+            .imagem {
+                width: 100%;
+                display: flex;
+                margin-top: 200px;
+            }
+
+            .imagem img {
+                margin: 0 auto;
+                border: 4px solid var(--amarelo-primario);
+                border-radius: 278px;
+                box-shadow: -2px 19px 98px 2px var(--amarelo-secundario);
+                transition-duration: 2s;
+            }
+
+            .imagem img:hover {
+                box-shadow: -2px 19px 98px 2px var(--amarelo-hover);
+                transition-duration: 2s;
+            }
+
+            a {
+                color: var(--amarelo-secundario);
+                transition-duration: 1s;
+            }
+            a:hover {
+                color: var(--amarelo-hover);
+                transition-duration: 1s;
+            }
+
+            .links {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #lista {
+                display: none;
+                list-style-type: disclosure-closed;
+            }
+
+            .links li {
+                margin: 0 20px;
+
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 50px;
+                height: 50px;
+            }
+
+            #checkbox-menu {
+                position: absolute;
+                opacity: 0;
+                top: 10px;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(1) {
+                transform: rotate(-45deg);
+                top: 8px;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(2) {
+                opacity: 0;
+            }
+
+            #checkbox-menu:checked+label span:nth-child(3) {
+                transform: rotate(45deg);
+                top: 8px;
+            }
+
+            label {
+                cursor: pointer;
+                position: relative;
+                display: block;
+                height: 22px;
+                width: 30px;
+            }
+
+            label span {
+                position: absolute;
+                display: block;
+                height: 5px;
+                width: 100%;
+                border-radius: 30px;
+                background-color: #eefa1a;
+                transition: 0.25s ease-in-out;
+            }
+
+            label span:nth-child(1) {
+                top: 0;
+            }
+
+            label span:nth-child(2) {
+                top: 8px;
+            }
+
+            label span:nth-child(3) {
+                top: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <h1>Julio Furtado</h1>
+                </div>
+                <div class="links">
+                    <ul id="lista">
+                        <a href="#inicio">
+                            <li>Inicio</li>
+                        </a>
+                        <a href="#resumo">
+                            <li>Resumo</li>
+                        </a>
+                        <a href="#experiencias">
+                            <li>Experiência</li>
+                        </a>
+                        <a href="#competencias">
+                            <li>Competências</li>
+                        </a>
+                        <a href="#habilidades">
+                            <li>Habilidades</li>
+                        </a>
+                    </ul>
+
+                    <div class="container">
+                        <input type="checkbox" id="checkbox-menu">
+                        <label for="checkbox-menu">
+                            <a onclick="handleClick()"> 
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </label>
+                    </div>
+
+                </div>
+
+            </nav>
+        </header>
+        <dl>
+
+            <dd>
+                <main>
+                    <div id="inicio" class="imagem">
+                        <img src="./assets/images/perfil.png" alt="">
+                    </div>
+                    <section id="resumo" class="resumo">
+                        <dl>
+                            <dt>
+                                <h2>Resumo:</h2>
+                            </dt>
+                            <dd>
+                                <p>Sou programador fullstack, tenho conhecimento técnico e já desenvolvi projetos
+                                    práticos com
+                                    as
+                                    seguintes tecnologias:</p>
+                                <p>No Front-end uso <strong> Javascript, HTML e CSS, Angular, JQuery,
+                                        Bootstrap</strong>, entre outras, bem como <strong> consumo de APIs
+                                        Rest</strong> de
+                                    autoria de terceiros, ou de minha autoria.
+                                    No Back-end, <strong> C#, ASP.Net Core</strong> para criação de API, <strong> Entity
+                                        Framework</strong>, com <strong> banco de
+                                        dados não-relacional como Firebase e MongoDB, banco
+                                        relacional MySQL e SQL Server</strong>.</p>
+                                <p> <strong> Aqui estão alguns projetos que já programei, a maioria por pura
+                                        criatividade e
+                                        vontade
+                                        de
+                                        criar algo
+                                        que fosse original:</p></strong>
+                                <em>Front-end:</em>
+                                <p><a href="http://blog-julioallday.vercel.app" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <h4>Blog</h4>
+                                    </a></p>
+                                <p><a href="http://julioallday.github.io/palindrome-checks/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <h4>Verificação de palíndromo</h4>
+                                    </a></p>
+                                <p><a href="http://julioallday.github.io/calculadora-de-gorjetas" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <h4>Calculadora de gorjetas</h4>
+                                    </a></p>
+                                <em>Back-end:</em>
+                                <p><a href="http://https://github.com/julioallday/filmesApi" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <h4>FilmesApi</h4>
+                                    </a></p>
+                                <p><a href="http://https://github.com/julioallday/blogApi" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <h4>BlogApi</h4>
+                                    </a></p>
+                            </dd>
+                        </dl>
+                        <hr>
+                    </section>
+                    <section id="experiencias" class="experiencia">
+                        <dl>
+                            <dt>
+                                <h2>Experiência</h2>
+                            </dt>
+                            <dd> <a href="https://www.workana.com/" target="_blank" rel="noopener noreferrer">
+                                    <h4>Workana</h4>
+                                </a>
+                                <p><em> Desenvolvedor Front-end freelancer | 10/2022 - o momento</em></p>
+                                <p>Desenvolvo aplicações web e sistemas (Front-end e Back-end).
+                                <ul>
+                                    <li>Atuo principalmente com desenvolvimento de landing pages para melhora de taxa de
+                                        conversão de
+                                        clientes;</li>
+                                    <li>Correção de problemas de usabilidade;</li>
+                                    <li>Melhorias em design e performance;</li>
+                                    <li>Correção de bugs, entre outros serviços;</li>
+                                </ul>
+                                <ul>
+                                    <h4>Algumas tecnologias usadas:</h4>
+                                    <li>Javascript e Typescript;</li>
+                                    <li>Frameworks (Angular e React);</li>
+                                    <li>Bancos relacionais (MySQL, SQL Server);</li>
+                                    <li>Bancos não-relacionais (Firebase, MongoDB)</li>
+                                    <hr>
+                                </ul>
+                                <h4>Spartan Serviços</h4>
+                                <p><em>Controlador de Mesa Operacional | 01/2019 - 03/2022</em></p>
+                                <ul>
+                                    <li>Liderei um efetivo de +400 funcionários;</li>
+                                    <li>Colaborei diretamente na economia de gastos da empresa,
+                                        utilizando tecnologias de controle de faltas e atrasos entre outras,
+                                        reduzindo assim o gasto operacional;</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <hr>
+                    </section>
+                    <section id="educacao" class="educacao">
+                        <dl>
+                            <dt>
+                                <h2>Educação</h2>
+                            </dt>
+                            <dd>
+
+                                <a href="https://estacio.br/" target="_blank" rel="noopener noreferrer">
+                                    <h4>Universidade Estácio de Sá</h4>
+                                </a>
+                                <p><em>Graduação em Análise e desenvolvimento de Sistemas | 02/2023 - o momento</em></p>
+                                <hr>
+                                <a href="https://sc.senai.br/" target="_blank" rel="noopener noreferrer">
+                                    <h4>SENAI/SC - Serviço Nacional de Aprendizagem Industrial</h4>
+                                </a>
+                                <p><em>Desenvolvedor Fullstack 900h | 01/2023 - o momento</em></p>
+                                <ul>
+                                    <li> Curso de 900h.</li>
+                                    <li> O primeiro modulo é focado no front-end, com Javascript e Angular, já o segundo
+                                        módulo
+                                        focado
+                                        no
+                                        back-end, com Java, SQL e Spring, e o terceiro módulo é voltado ao ciclo
+                                        completo de
+                                        desenvolvimento, boas práticas (Tanto para o desenvolvimento de programas,
+                                        quanto para
+                                        criar uma
+                                        pergunta de forma objetiva e clara em fóruns como Stack Overflow), DevOps,
+                                        Containers,
+                                        Docker e
+                                        visão geral de orquestrador (Kubernetes), TDD e Testes unitários.</li>
+                                    <li> Ao longo de todo o curso os alunos são expostos à rotina de trabalho
+                                        corporativo de uma
+                                        empresa
+                                        de
+                                        tecnologia, que é possível graças a:
+                                        Uma intranet, um mensageiro, uma ferramenta ágil e um sistema de versionamento,
+                                        que
+                                        seriam:
+                                        O Ambiente virtual de aprendizado, DISCORD, TRELLO e GITHUB.</li>
+                                    <li> Curso com aulas ao vivo de 3 horas por dia, de segunda a sexta.</li>
+                                    <li> Conta com exercícios práticos semanais.</li>
+                                    <hr>
+                                </ul>
+                                <a href="https://alura.com.br" target="_blank" rel="noopener noreferrer">
+                                    <h4>Alura</h4>
+                                </a>
+                                <p><em>Desenvolvedor Fullstack | 05/2022 - o momento</em></p>
+                                <ul>
+                                    <li>Javascript, Typescript, HTML, CSS e Angular no Front-end.</li>
+                                    <li>C# (e Java), para APIs Rest, Bancos de dados SQL E NoSQL no Back-end.</li>
+                                    <li>Assim como versionamento de codigo com Git e Github.</li>
+                                    <li>O curso conta com uma estrutura ótima para consulta no dia a dia, possibilitando
+                                        a busca
+                                        eficaz
+                                        de qualquer informação da área. </li>
+                                    <li>Temos também conteúdo voltado a Soft Skills, como aprender a aprender, como
+                                        trabalhar em
+                                        time
+                                        entre outras.</li>
+                                    <hr>
+                                </ul>
+                                <a href="https://firjansenai.com.br/cursorio/portal/index.php" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <h4>Firjan Senai Maracanã</h4>
+                                </a>
+                                <p><em>Desenvolvedor Front-End | 07/2022 - 10/2022</em></p>
+                                <ul>
+                                    <li>Sempre aproveitei cada minuto das aulas ao vivo para tirar todas as dúvidas
+                                        possíveis..
+                                        Absorvendo o máximo de conhecimento e experiências do professor e outros alunos,
+                                        e dessa
+                                        maneira
+                                        minha evolução cresceu cada vez mais!</li>
+                                    <li>Curso onde aprendemos sobre a base do front-end, HTML CSS e Javascript, em
+                                        projetos
+                                        práticos.
+                                    </li>
+                                    <li>Aprendemos também a utilizar o framework ReactJS, uso de Node Package Manager
+                                        como Axios
+                                        para
+                                        requisições HTTP, Nookies para gerenciamento de Cookies, entre outros pacotes.
+                                    </li>
+                                    <li>Aulas ao vivo de segunda a sexta-feira. </li>
+                                    <hr>
+                                </ul>
+                                <a href="https://www.aluralingua.com.br/" target="_blank" rel="noopener noreferrer">
+                                    <h4>Alura Língua</h4>
+                                </a>
+                                <p><em>Inglês - pré-intermediário | 07/2022 - o momento</em></p>
+                            </dd>
+                        </dl>
+                        <hr>
+                    </section>
+                    <section id="competencias" class="competencia">
+                        <dl>
+                            <dt>
+                                <h2>Competências</h2>
+                            </dt>
+                            <dd>
+
+                                <ul>
+                                    <li>Javascript</li>
+                                    <li>.NET</li>
+                                    <li>Angular</li>
+                                    <li>React</li>
+                                    <li>C#</li>
+                                    <li>Git</li>
+                                    <li>Firebase</li>
+                                    <li>MongoDB</li>
+                                    <li>Linux</li>
+                                    <li>MySQL</li>
+                                    <li>Java</li>
+                                    <li>Bootstrap</li>
+                                    <li>Wordpress</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <hr>
+                    </section>
+                    <section id="habilidades" class="habilidades">
+                        <dl>
+                            <dt>
+                                <h2>Habilidades</h2>
+                            </dt>
+                            <dd>
+                                <p>Como profissional, sou comunicativo tenho facilidade em me
+                                    relacionar com o time. <br>
+                                    Possuo senso de responsabilidade e
+                                    urgência, e aprendizado rápido. <br>
+                                    Determinado a cumprir com os desafios, e em caso de dificuldades
+                                    tenho a consciência de buscar o conhecimento de forma mais
+                                    eficiente e eficaz, assim adquirindo sempre novas habilidades.</p>
+                            </dd>
+                        </dl>
+                        <hr>
+                    </section>
+                </main>
+            </dd>
+        </dl>
+        <script>
+            function handleClick() {
+                let x = document.getElementById("lista")
+                if (x.style.display === "flex") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "flex";
+                }
+            }
+
+        </script>
+    </body>
+
+</html>
