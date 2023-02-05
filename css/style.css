@@ -139,12 +139,15 @@ a {
   color: var(--sombra);
   letter-spacing: 2px;
   transition-duration: 1s;
+   -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: var(--amarelo-primario);
 }
 
 a:hover {
   color: var(--amarelo-hover);
   transition-duration: 1s;
 }
+
 
 .links {
   display: flex;
